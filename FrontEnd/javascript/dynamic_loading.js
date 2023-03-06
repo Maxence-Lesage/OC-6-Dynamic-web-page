@@ -8,14 +8,16 @@ export async function galleryLoading() {
     const reponse = await fetch("http://localhost:5678/api/works");
     const works = await reponse.json();
 
-    for (var i = 0; i < works.length; i++) {
+    works.map((work) => {
+        const srcImage = work.imageUrl;
+        const title = work.title;
+        const category = work.category.name;
 
-        const srcImage = works[i].imageUrl;
-        const title = works[i].title;
-
-        gallery.innerHTML += "<figure>"
+        gallery.innerHTML += "<figure class=\"gallery_element\" data-category=\"" + category + "\">"
             + "<img src =\"" + srcImage + "\" alt=\"" + title + "\">"
             + "<figcaption> " + title + " </figcaption>"
             + "</figure>";
-    }
+    })
+
 }
+
