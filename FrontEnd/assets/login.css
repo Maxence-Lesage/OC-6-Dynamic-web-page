@@ -194,7 +194,7 @@ nav ul {
 }
 
 nav li {
-    padding: 0 10px;
+    padding: 0 20px;
     font-size: 1.2em;
 }
 
@@ -208,6 +208,7 @@ nav li:nth-child(3) {
 
 li:hover {
     color: #B1663C;
+    cursor: pointer;
 }
 
 #login {
@@ -232,6 +233,7 @@ li:hover {
 }
 
 #login input {
+    padding-left: 10px;
     height: 50px;
     font-size: 1.2em;
     border: none;
@@ -291,6 +293,10 @@ input[type="submit"] {
     width: 180px;
     text-align: center;
     border-radius: 60px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
 }
 
 footer nav {

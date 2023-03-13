@@ -140,6 +140,7 @@ table {
 }
 
 /** end reset css**/
+
 html {
 	overflow-x: hidden;
 }
@@ -199,7 +200,7 @@ nav ul {
 }
 
 nav li {
-	padding: 0 10px;
+	padding: 0 20px;
 	font-size: 1.2em;
 }
 
@@ -209,6 +210,7 @@ nav img {
 
 li:hover {
 	color: #B1663C;
+	cursor: pointer;
 }
 
 #introduction {
@@ -240,7 +242,7 @@ li:hover {
 }
 
 #introduction .edition_text {
-	margin: 17px auto 0 auto;
+	margin-top: 17px;
 	width: 80%;
 }
 
@@ -251,7 +253,7 @@ li:hover {
 .title {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: baseline;
 	margin-bottom: 1em;
 	gap: 30px;
 }
@@ -319,6 +321,7 @@ li:hover {
 }
 
 #contact input {
+	padding-left: 10px;
 	height: 50px;
 	font-size: 1.2em;
 	border: none;
@@ -330,6 +333,7 @@ li:hover {
 }
 
 #contact textarea {
+	padding: 5px 5px;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
@@ -343,6 +347,10 @@ input[type="submit"] {
 	width: 180px;
 	text-align: center;
 	border-radius: 60px;
+}
+
+input[type="submit"]:hover {
+	cursor: pointer;
 }
 
 footer {
@@ -386,6 +394,10 @@ footer nav ul {
 	gap: 20px;
 }
 
+.edition input[Type="button"]:hover {
+	cursor: pointer;
+}
+
 .edition .edition_icon {
 	color: white;
 }
@@ -394,6 +406,10 @@ footer nav ul {
 	color: white;
 	font-size: 16px;
 	line-height: 19px;
+}
+
+.edition_text:not(:nth-child(1)):hover {
+	cursor: pointer;
 }
 
 .edition_text {
@@ -514,4 +530,14 @@ footer nav ul {
 	height: 36px;
 	width: 237px;
 	border: none;
+	margin-top: 35px;
+	margin-bottom: 20px;
+}
+
+.delete_gallery {
+	font-family: 'Syne';
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	color: #D65353;
 }

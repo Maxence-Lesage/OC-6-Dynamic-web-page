@@ -2,9 +2,11 @@ const gallery_edit_button = document.querySelector('.gallery_edit_button');
 const modale_background = document.querySelector('.modale_background');
 const modale = document.querySelector('.modale');
 const modale_close = document.querySelector('.modale_close');
+const user_log = document.querySelector('.user_log');
 
 if (sessionStorage.getItem("token")) {
     const edit_element = Array.from(document.getElementsByClassName("edition_not_displayed"));
+    user_log.innerHTML = "logout";
 
     edit_element.forEach(e => {
         e.classList.remove("edition_not_displayed");
@@ -25,5 +27,3 @@ function toggle_modale() {
     modale_background.classList.toggle('not_displayed');
     modale.classList.toggle('not_displayed');
 }
-
-

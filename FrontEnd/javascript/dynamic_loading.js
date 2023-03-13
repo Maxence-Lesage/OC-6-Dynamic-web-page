@@ -14,18 +14,22 @@ export async function galleryLoading() {
         const srcImage = work.imageUrl;
         const title = work.title;
         const category = work.category.name;
+        const project_id = work.id;
 
-        gallery.innerHTML += "<figure class=\"gallery_element\" data-category=\"" + category + "\">"
+        gallery.innerHTML += "<figure class=\"gallery_element\""
+            + " data-category=\"" + category + "\"> "
             + "<img src =\"" + srcImage + "\" alt=\"" + title + "\">"
             + "<figcaption> " + title + " </figcaption>"
             + "</figure>";
 
-        edit_gallery.innerHTML += "<figure class=\"gallery_element\" data-category=\"" + category + "\">"
+        edit_gallery.innerHTML += "<figure class=\"gallery_element\" data-category=\"" + category + "\""
+            + "data-project_id=\"" + project_id + "\">"
             + "<img src =\"" + srcImage + "\" alt=\"" + title + "\">"
             + "<figcaption> " + "éditer" + " </figcaption>"
-            + "<i class=\"fa-solid fa-trash-can\"></i>"
+            + "<div class=\"delete_project\"> <i class=\"fa-solid fa-trash-can\"></i> </div>"
             + "</figure>";
     })
 
+    addTrashClickEvent();
 }
 
