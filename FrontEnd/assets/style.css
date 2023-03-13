@@ -140,9 +140,14 @@ table {
 }
 
 /** end reset css**/
+html {
+	overflow-x: hidden;
+}
+
 body {
-	max-width: 1140px;
+	max-width: 1440px;
 	margin: auto;
+	overflow-x: hidden;
 	font-family: 'Work Sans';
 	font-size: 14px;
 	background-color: #FFFEF8;
@@ -151,7 +156,13 @@ body {
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 30px auto 70px auto;
+	width: min(100%, 1140px);
+}
+
+main {
+	margin: 0 auto;
+	width: min(100%, 950px);
 }
 
 section {
@@ -171,7 +182,6 @@ h1>span {
 	font-family: 'Work Sans';
 	font-size: 10px;
 	letter-spacing: 0.1em;
-	;
 }
 
 h2 {
@@ -193,6 +203,10 @@ nav li {
 	font-size: 1.2em;
 }
 
+nav img {
+	height: 19px;
+}
+
 li:hover {
 	color: #B1663C;
 }
@@ -200,6 +214,8 @@ li:hover {
 #introduction {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 }
 
 #introduction figure {
@@ -208,12 +224,11 @@ li:hover {
 
 #introduction img {
 	display: block;
-	margin: auto;
-	width: 80%;
+	width: 475px;
 }
 
 #introduction article {
-	flex: 1
+	width: 404px;
 }
 
 #introduction h2 {
@@ -224,9 +239,21 @@ li:hover {
 	margin-bottom: 0.5em;
 }
 
+#introduction .edition_text {
+	margin: 17px auto 0 auto;
+	width: 80%;
+}
+
 #portfolio h2 {
 	text-align: center;
+}
+
+.title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	margin-bottom: 1em;
+	gap: 30px;
 }
 
 .filter {
@@ -268,7 +295,6 @@ li:hover {
 
 .gallery img {
 	width: 100%;
-
 }
 
 #contact {
@@ -319,13 +345,173 @@ input[type="submit"] {
 	border-radius: 60px;
 }
 
+footer {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	left: 0;
+	width: 100%;
+	height: 60px;
+	background-color: rgb(255, 255, 255);
+}
+
+footer nav {
+	width: min(100%, 1440px);
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
-	background-color: white;
-	margin: 2em
+	margin-right: 107px;
 }
 
 .not_displayed {
+	display: none !important;
+}
+
+/*-------------------------------------------------------*/
+/*--Mode Edition--*/
+
+.edition {
+	margin: 0;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 50px;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+.edition .edition_icon {
+	color: white;
+}
+
+.edition .edition_text {
+	color: white;
+	font-size: 16px;
+	line-height: 19px;
+}
+
+.edition_text {
+	color: rgb(0, 0, 0);
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16.5px;
+	font-family: 'Work Sans';
+	display: flex;
+	gap: 5px;
+}
+
+.edition_icon {
+	height: 15.7px;
+	color: black;
+}
+
+.edition input[type="button"] {
+	font-weight: 500;
+	color: rgb(0, 0, 0);
+	background-color: #ffffff;
+	border: none;
+	width: 190px;
+	height: 32px;
+	text-align: center;
+	border-radius: 60px;
+}
+
+.edition_not_displayed {
 	display: none;
+}
+
+/*--------------------------*/
+
+.modale_background {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	opacity: .3;
+	height: 100%;
+	width: 100%;
+}
+
+.modale {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 6px;
+	padding: 50px 75px 40px 75px;
+	background-color: white;
+}
+
+.modale_close {
+	position: absolute;
+	top: 25px;
+	right: 30px;
+}
+
+.modale_close .fa-xmark {
+	height: 22px;
+}
+
+.modale_close:hover {
+	cursor: pointer;
+}
+
+.modale_title {
+	font-family: Work Sans;
+	color: inherit;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 30px;
+}
+
+.edit_gallery {
+	display: grid;
+	margin: 40px 0;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 10px;
+}
+
+.edit_gallery img {
+	width: 100%;
+}
+
+.edit_gallery .gallery_element {
+	position: relative;
+}
+
+.edit_gallery .fa-trash-can {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	background-color: black;
+	color: white;
+	height: 9px;
+	width: 9px;
+	padding: 4px;
+	border-radius: 2px;
+}
+
+.edit_gallery .fa-trash-can:hover {
+	cursor: pointer;
+}
+
+.edit_line {
+	width: 420px;
+	height: 1px;
+	background-color: #B3B3B3;
+}
+
+.modale input[type='submit'] {
+	height: 36px;
+	width: 237px;
+	border: none;
 }

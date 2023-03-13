@@ -9,7 +9,6 @@ form.addEventListener('submit', (e) => {
         password: formData.get('pass')
     }
 
-
     login(JSON.stringify(objectToSend));
 
 });
@@ -22,11 +21,28 @@ async function login(data) {
             'Content-Type': 'application/json',
             'Origin': 'http://localhost:5500'
         }
-    }).then(function (response) {
-        return response.text();
-    }).then(function (text) {
-        console.log(text);
-    }).catch(function (error) {
-        console.log(error);
-    });
+    }).then(res => res.json())
+        .then(json => {
+            if (json.token) valid_credential(json.token);
+            else invalid_credential();
+        }).catch(function (error) {
+            console.log(error);
+        });
+}
+
+function valid_credential(data) {
+    sessionStorage.setItem("token", data);
+    window.location.replace("./index.html");
+}
+
+function invalid_credential() {
+    const errorText = document.querySelector('.credential_error');
+    if (errorText.classList.contains("not_displayed")) {
+        errorText.classList.remove("not_displayed");
+        errorText.classList.add("credential_animation");
+    } else {
+        errorText.classList.remove("credential_animation");
+        void errorText.offsetWidth;
+        errorText.classList.add("credential_animation");
+    }
 }

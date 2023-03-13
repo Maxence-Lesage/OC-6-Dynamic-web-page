@@ -140,10 +140,16 @@ table {
 }
 
 /** end reset css**/
+
+html {
+    overflow-x: hidden;
+}
+
 body {
     max-width: 1140px;
     margin: auto;
     font-family: 'Work Sans';
+    overflow-x: hidden;
     font-size: 14px;
     background-color: #FFFEF8;
 }
@@ -151,7 +157,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    margin: 50px 0
+    margin: 30px auto 70px auto;
 }
 
 section {
@@ -171,7 +177,6 @@ h1>span {
     font-family: 'Work Sans';
     font-size: 10px;
     letter-spacing: 0.1em;
-    ;
 }
 
 h2 {
@@ -191,6 +196,10 @@ nav ul {
 nav li {
     padding: 0 10px;
     font-size: 1.2em;
+}
+
+nav img {
+    height: 19px;
 }
 
 nav li:nth-child(3) {
@@ -238,6 +247,37 @@ li:hover {
     box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
+.credential_error {
+    margin: 2em auto 0 auto;
+    color: rgb(220, 0, 0);
+}
+
+.credential_animation {
+    animation: credential_error .2s linear;
+}
+
+@keyframes credential_error {
+    0% {
+        transform: translateX(0%);
+    }
+
+    25% {
+        transform: translateX(-15px);
+    }
+
+    50% {
+        transform: translateX(0%);
+    }
+
+    75% {
+        transform: translateX(15px);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 .pass_lost {
     text-decoration-line: underline;
 }
@@ -261,4 +301,8 @@ footer nav ul {
     display: flex;
     justify-content: flex-end;
     margin: 2em
+}
+
+.not_displayed {
+    display: none;
 }
