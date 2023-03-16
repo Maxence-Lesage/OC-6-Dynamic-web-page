@@ -33,7 +33,7 @@ async function deleteProject(project_id) {
                     break;
                 default: text = "Un erreur inattendu s'est produite";
             }
-            alert(text);
+            console.log(text);
         }).catch(function (error) {
             console.log(error);
         });

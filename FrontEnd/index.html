@@ -7,14 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Work+Sans&display=swap"
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&family=Work+Sans&display=swap"
 		rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="./javascript/main.js" defer></script>
 	<script src="./javascript/delete_project.js" defer></script>
 	<script src="./javascript/edit_mode.js" defer></script>
-	<script src="https://kit.fontawesome.com/98eadf88ec.js" crossorigin="anonymous"></script>
+	<script src="./javascript/modale_add.js" defer></script>
+	<script src="https://kit.fontawesome.com/98eadf88ec.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
@@ -27,14 +28,16 @@
 		<input type="button" value="publier les changements">
 	</section>
 
-	<header>
+	<header class="body_header">
 		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
-		<nav>
-			<ul>
-				<li> <a href="./index.html"> projets </a> </li>
-				<li> <a href="#"> contact </a> </li>
-				<li> <a href="./login.html" class="user_log"> login </a> </li>
-				<li> <a href="#"> <img src="./assets/icons/instagram.png" alt="Instagram"> </a> </li>
+		<nav class="main_navigation">
+			<ul class="main_navigation_links">
+				<li class="link"> <a href="./index.html"> projets </a> </li>
+				<li class="link"> <a href="#"> contact </a> </li>
+				<li class="link"> <a class="user_log" href="./html/login.html"> login </a> </li>
+				<li class="link"> <a href="#"> <img class="link_image" src="./assets/icons/instagram.png"
+							alt="Instagram">
+					</a> </li>
 			</ul>
 		</nav>
 	</header>
@@ -93,10 +96,10 @@
 		</section>
 	</main>
 
-	<footer>
-		<nav>
-			<ul>
-				<li>Mentions Légales</li>
+	<footer class="body_footer">
+		<nav class="footer_navigation">
+			<ul class="footer_navigation_links">
+				<li class="link">Mentions Légales</li>
 			</ul>
 		</nav>
 	</footer>
@@ -111,10 +114,46 @@
 
 		</div>
 		<div class="edit_line"></div>
-		<input type="submit" value="Ajouter une photo">
+		<input id="add_picture" type="submit" value="Ajouter une photo">
 		<p class="delete_gallery">Supprimer la galerie</p>
 	</div>
-
+	<div class="modale not_displayed">
+		<div class="modale_before">
+			<i class="fa-solid fa-arrow-left"></i>
+		</div>
+		<div class="modale_close">
+			<i class="fa-solid fa-xmark"></i>
+		</div>
+		<h2 class="modale_title">Ajout Photo</h2>
+		<form class="upload_form" enctype="multipart/form-data">
+			<label class="photo_upload_label" for="photo_upload">
+				<svg id="eWUSFztKvVX1" class="photo_upload_image" xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300"
+					shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+					<path d="M27.793056,72.189753h227.511648L254.22864,239.207458l-226.435584-.981264v-166.036441Z"
+						transform="translate(0 0.000003)" />
+					<path d="M44.293572,221.725679l58.783087-57.751805l53.626674,44.345136"
+						transform="translate(.000001 0)" />
+					<path d="M139.171536,192.849775l47.438982-57.751804l53.626676,49.501546"
+						transform="translate(.000001 0.000002)" />
+					<ellipse rx="15.727054" ry="15.984874" transform="translate(80.646271 119.113098)" />
+				</svg>
+				<div class="upload_textarea">
+					<div class="photo_upload_button">+ Ajouter photo</div>
+					<p class="photo_upload_text">jpg, png : 4mo max</p>
+				</div>
+			</label>
+			<input type="file" name="image" id="photo_upload" accept=".png,.jpg" required>
+			<label for="photo_title">Titre</label>
+			<input id="photo_title" name="title" type="text" required>
+			<label for="photo_category">Catégorie</label>
+			<select name="category" id="photo_category" required>
+				<option value="" selected="true" disabled hidden></option>
+			</select>
+			<div class="edit_line"></div>
+			<input id="upload_submit" type="submit" value="Valider">
+		</form>
+	</div>
 </body>
 
 </html>

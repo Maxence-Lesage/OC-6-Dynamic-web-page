@@ -139,6 +139,7 @@ table {
     border-spacing: 0;
 }
 
+/*----------------------------------------------*
 /** end reset css**/
 
 html {
@@ -146,7 +147,7 @@ html {
 }
 
 body {
-    max-width: 1140px;
+    max-width: 1440px;
     margin: auto;
     font-family: 'Work Sans';
     overflow-x: hidden;
@@ -154,14 +155,8 @@ body {
     background-color: #FFFEF8;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    margin: 30px auto 70px auto;
-}
-
 section {
-    margin: 50px 0
+    margin: 150px auto;
 }
 
 h1 {
@@ -186,34 +181,87 @@ h2 {
     color: #1D6154
 }
 
-nav ul {
+input[type="submit"] {
+    font-family: 'Syne';
+    font-weight: 700;
+    color: white;
+    background-color: #1D6154;
+    margin: 2em auto;
+    width: 180px;
+    text-align: center;
+    border-radius: 60px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+}
+
+/*----------------------------------------------*
+/** end general css**/
+
+.body_header {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto 70px auto;
+    max-width: 1140px;
+}
+
+.main_navigation_links {
     display: flex;
     align-items: center;
     list-style-type: none;
 
 }
 
-nav li {
+.link {
     padding: 0 20px;
     font-size: 1.2em;
 }
 
-nav img {
+.link_image {
     height: 19px;
 }
 
-nav li:nth-child(3) {
+.link:nth-child(3) {
     font-weight: 600;
 }
 
-li:hover {
+.link:hover {
     color: #B1663C;
     cursor: pointer;
 }
 
+/*----------------------------------------------*
+/** end main navigation **/
+
+.body_footer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.footer_navigation {
+    position: absolute;
+    top: -20%;
+    width: 100%;
+    height: fit-content;
+}
+
+.footer_navigation_links {
+    display: flex;
+    justify-content: flex-end;
+    margin: 2em
+}
+
+/*----------------------------------------------*
+/** end footer css**/
+/*----------------------------------------------*/
+/*--end layout--*/
+
 #login {
     width: 40%;
-    margin: auto;
 }
 
 #login>* {
@@ -284,29 +332,8 @@ li:hover {
     text-decoration-line: underline;
 }
 
-input[type="submit"] {
-    font-family: 'Syne';
-    font-weight: 700;
-    color: white;
-    background-color: #1D6154;
-    margin: 2em auto;
-    width: 180px;
-    text-align: center;
-    border-radius: 60px;
-}
-
-input[type="submit"]:hover {
+.pass_lost:hover {
     cursor: pointer;
-}
-
-footer nav {
-    margin-top: 5em;
-}
-
-footer nav ul {
-    display: flex;
-    justify-content: flex-end;
-    margin: 2em
 }
 
 .not_displayed {

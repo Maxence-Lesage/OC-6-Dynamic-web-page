@@ -32,7 +32,7 @@ async function login(data) {
 
 function valid_credential(data) {
     sessionStorage.setItem("token", data);
-    window.location.replace("./index.html");
+    window.location.replace("../index.html");
 }
 
 function invalid_credential() {
