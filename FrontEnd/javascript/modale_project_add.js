@@ -1,25 +1,28 @@
+const select_category = document.getElementById('photo_categories');
+const photo_upload = document.getElementById('photo_upload');
+const photo_upload_label = document.querySelector('.photo_upload_label');
+const upload_form = document.querySelector('.upload_form');
+const upload_title = document.getElementById('photo_title');
+const upload_submit = document.getElementById("upload_submit");
+
+/*Récupére la liste des catégories et les rajoutent à la liste des options du formulaire*/
 async function categoryList() {
 
     const reponse = await fetch("http://localhost:5678/api/categories");
     const categories = await reponse.json();
 
-    const select_category = document.getElementById('photo_category');
     categories.map((category) => {
         select_category.innerHTML += "<option value=\"" + category.id + "\">" + category.name + "</option>";
     });
 }
 
-categoryList();
-
-const photo_upload = document.getElementById('photo_upload');
-const photo_upload_label = document.querySelector('.photo_upload_label');
-
+/*Upload d'une photo => actualise sa prévisualisation*/
 photo_upload.addEventListener('change', (event) => {
     imageLoader();
 });
 
+/*Ajoute une prévisualisation de la photo contenu dans le formulaire d'upload*/
 function imageLoader() {
-
     if (photo_upload.value) {
         const file = photo_upload.files[0];
         const reader = new FileReader();
@@ -35,29 +38,20 @@ function imageLoader() {
     }
 }
 
-imageLoader();
-
-const upload_form = document.querySelector('.upload_form');
-const upload_image = document.getElementById('photo_upload');
-const upload_title = document.getElementById('photo_title');
-const upload_category = document.getElementById('photo_category');
-
+/*Si les trois champs du formulaire ont été remplis => le bouton valider change de couleur*/
 upload_form.addEventListener('change', (event) => {
-
-    if (upload_image.files.length !== 0 && upload_title && upload_category.value) {
-        console.log("Tout les champs ont été remplis")
+    if (photo_upload.files.length !== 0 && upload_title && select_category.value) {
         document.getElementById('upload_submit').classList.add('submitGreen');
     }
-
 });
 
-const upload_submit = document.getElementById("upload_submit");
-
+/*Click sur le bouton "Valider" => Ajoute le projet*/
 upload_submit.addEventListener('click', (event) => {
     event.preventDefault();
     upload();
 });
 
+/*Upload le projet en récupérant les informations du formulaire*/
 async function upload() {
     const token = sessionStorage.getItem("token");
     const formData = new FormData(upload_form);
@@ -69,20 +63,24 @@ async function upload() {
             'Origin': 'http://localhost:5500',
             'Authorization': `Bearer ${token}`
         }
-    }).then(res => res.status)
+    }).then(response => response.status)
         .then(code => {
             let text = "";
             switch (code) {
-                case 200: text = "Le projet à été ajouté avec succès";
-                    break;
                 case 401: text = "Vous n'avez l'autorisation pour faire cela";
                     break;
                 case 500: text = "Un erreur inattendu s'est produite";
                     break;
                 default: text = "Un erreur inattendu s'est produite";
             }
-            console.log(text);
+            if (code !== 201) alert(text);
         }).catch(function (error) {
             console.log(error);
         });
 }
+
+/*Click sur l'îcone retour de la modale d'ajout de projet => ramène sur la première modale*/
+modale_before.addEventListener('click', () => {
+    modales[0].classList.toggle('not_displayed');
+    modales[1].classList.toggle('not_displayed');
+});

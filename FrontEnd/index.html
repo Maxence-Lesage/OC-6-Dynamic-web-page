@@ -12,9 +12,9 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="./javascript/main.js" defer></script>
-	<script src="./javascript/delete_project.js" defer></script>
+	<script src="./javascript/modale_project_delete.js" defer></script>
 	<script src="./javascript/edit_mode.js" defer></script>
-	<script src="./javascript/modale_add.js" defer></script>
+	<script src="./javascript/modale_project_add.js" defer></script>
 	<script src="https://kit.fontawesome.com/98eadf88ec.js" crossorigin="anonymous" defer></script>
 </head>
 
@@ -114,7 +114,7 @@
 
 		</div>
 		<div class="edit_line"></div>
-		<input id="add_picture" type="submit" value="Ajouter une photo">
+		<input id="add_project" type="submit" value="Ajouter une photo">
 		<p class="delete_gallery">Supprimer la galerie</p>
 	</div>
 	<div class="modale not_displayed">
@@ -146,8 +146,8 @@
 			<input type="file" name="image" id="photo_upload" accept=".png,.jpg" required>
 			<label for="photo_title">Titre</label>
 			<input id="photo_title" name="title" type="text" required>
-			<label for="photo_category">Catégorie</label>
-			<select name="category" id="photo_category" required>
+			<label for="photo_categories">Catégorie</label>
+			<select name="category" id="photo_categories" required>
 				<option value="" selected="true" disabled hidden></option>
 			</select>
 			<div class="edit_line"></div>

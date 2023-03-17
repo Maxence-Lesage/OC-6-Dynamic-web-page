@@ -1,5 +1,6 @@
 const form = document.getElementById('login_form');
 
+/*Click sur "Envoyer" => Envoie les données d'identification au serveur*/
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -13,6 +14,7 @@ form.addEventListener('submit', (e) => {
 
 });
 
+/*Requête serveur avec les identifiants de connexion && réponse adaptée*/
 async function login(data) {
     await fetch('http://localhost:5678/api/users/login', {
         method: 'POST',
@@ -30,11 +32,13 @@ async function login(data) {
         });
 }
 
+/*Rajoute le token en session storage && ramène à la page d'accueil*/
 function valid_credential(data) {
     sessionStorage.setItem("token", data);
     window.location.replace("../index.html");
 }
 
+/*Erreur dans les identifiants => texte d'erreur avec animation destiné à l'utilisateur*/
 function invalid_credential() {
     const errorText = document.querySelector('.credential_error');
     if (errorText.classList.contains("not_displayed")) {

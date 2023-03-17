@@ -32,6 +32,6 @@ export async function galleryLoading() {
 
     edit_gallery.getElementsByClassName("gallery_element")[0].innerHTML += "<div class=\"delete_project\"> <i class=\"fa-solid fa-arrows-up-down-left-right\"></i> </div>";
 
-    addTrashClickEvent();
+    addDeleteProjectEvent();
 }
 

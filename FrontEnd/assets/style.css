@@ -611,7 +611,7 @@ input[type="submit"] {
 	margin: 25px 0px 10px 0px;
 }
 
-#photo_category,
+#photo_categories,
 #photo_title {
 	padding-left: 10px;
 	height: 45px;
@@ -626,7 +626,7 @@ input[type="submit"] {
 	color: #444444;
 }
 
-#photo_category {
+#photo_categories {
 	background-image: url('./icons/chevron-down-solid.svg');
 	background-repeat: no-repeat;
 	background-position: right 25px center;
