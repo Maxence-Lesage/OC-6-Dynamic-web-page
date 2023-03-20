@@ -73,8 +73,9 @@ async function upload() {
                     break;
                 default: text = "Un erreur inattendu s'est produite";
             }
-            if (code !== 201) alert(text);
+            if (code === 401) alert(text);
         }).catch(function (error) {
+            alert(text);
             console.log(error);
         });
 }

@@ -30,9 +30,9 @@ async function deleteProject(project_id) {
                     break;
                 default: text = "Une erreur inattendu s'est produite";
             }
-            console.log(code); /*bug*/
-            // if (code !== 200) alert(text);
+            if (code === 401) alert(text);
         }).catch(function (error) {
+            alert(text);
             console.log(error);
         });
 }

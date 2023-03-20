@@ -144,6 +144,7 @@ table {
 
 html {
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 }
 
 body {
@@ -153,6 +154,7 @@ body {
 	overflow-x: hidden;
 	font-size: 14px;
 	background-color: #FFFEF8;
+	scroll-behavior: smooth;
 }
 
 main {

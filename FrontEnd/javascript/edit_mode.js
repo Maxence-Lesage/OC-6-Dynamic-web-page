@@ -20,6 +20,7 @@ if (sessionStorage.getItem("token")) {
 gallery_edit_button.addEventListener('click', () => {
     modale_background.classList.remove('not_displayed');
     modales[0].classList.remove('not_displayed');
+    modales[0].scrollIntoView();
 });
 
 /*Click sur le bouton close => ferme la fenêtre modale en cours*/
